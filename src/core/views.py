@@ -30,6 +30,12 @@ def tirar_dado(request):
     }    
     return render(request, 'core/dados.html', context=datos)
 
+
+def ver_notas(request):
+      lista_notas = [18,8,3,7,4,5,8]
+      return render(request, "core/notas.html", {"notas":lista_notas})
+
+
 def index(request):
         ahora = datetime.now()
         contexto = {
