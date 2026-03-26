@@ -36,9 +36,21 @@ def ver_notas(request):
       return render(request, "core/notas.html", {"notas":lista_notas})
 
 
+def datos_usuarios(request):
+      datos_usuarios = [
+            {'nombre': 'Ivan', 'email': 'ijmm15@fmail.com'},
+            {'nombre': 'Juan', 'email': 'juancho@fmail.com'},
+            {'nombre': 'Santi', 'email': 'san_ti@fmail.com'},
+      ]
+      return render(request, "core/usuarios.html",{"usuarios": datos_usuarios} )      
+
+
 def index(request):
         ahora = datetime.now()
         contexto = {
                 "fecha":ahora
         }
         return render(request, "core/index.html", contexto)
+
+
+

@@ -26,5 +26,6 @@ urlpatterns = [
     path('saludar2', views.saludar2),
     path('saludar3/<str:nombre>/<str:apellido>', views.saludar3),
     path('dados', views.tirar_dado),
-    path('notas', views.ver_notas)
+    path('notas', views.ver_notas),
+    path('usuarios', views.datos_usuarios)
 ]
