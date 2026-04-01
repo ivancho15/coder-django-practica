@@ -79,11 +79,103 @@
             color: #777;
             text-align: center;
         }
+        
+
+        .navbar {
+            background-color: var(--bg-navbar);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem 2rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Estilo especial para el link de Clientes como botón */
+        .nav-button {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+        }
+
+        .nav-button:hover {
+            background-color: var(--secondary-color);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .icon {
+            font-size: 1.1rem;
+        }
+
+        /* Responsivo para móviles */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="/" class="nav-logo">MiApp</a>
+                <div class="nav-menu">
+                    <a href="{% url 'core:dados' %}" class="nav-link">
+                        <span class="icon">🎲</span> Tirar Dados
+                    </a>
+                    <a href="{% url 'core:saludar' %}" class="nav-link">
+                        <span class="icon">👋</span> Saludar 1
+                    </a>
+                    <a href="{% url 'core:saludar2' %}" class="nav-link">
+                        <span class="icon">✨</span> Saludar 2
+                    </a>
+                    <a href="{% url 'clientes:index' %}" class="nav-link nav-button">
+                        <span class="icon">👥</span> Clientes
+                    </a>
+                </div>
+            </div>
+        </nav>
         <header>
             <h1>Django</h1>
             <span class="subtitle">El framework web para perfeccionistas con plazos de entrega.</span>
