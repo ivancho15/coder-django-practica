@@ -7,7 +7,7 @@ def saludar(request):
         return HttpResponse("Hola desde Django")
 
 def saludar2(request):
-        return HttpResponse("<H1>Esta es el titulo</H1>")
+        return HttpResponse("<H1>Este es el titulo</H1>")
 
 def saludar3(request, nombre: str, apellido: str):
         nombre = nombre.upper()
