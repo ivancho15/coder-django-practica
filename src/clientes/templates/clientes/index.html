@@ -6,6 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <H1>Bienvenido a App clientes</H1>
+    <H1>Clientes</H1>
+    {% for c in clientes %}
+        <p>{{ c.nombre|upper}}, {{c.apellido}}</p>
+    {% endfor %}
 </body>
 </html>
