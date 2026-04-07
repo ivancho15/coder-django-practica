@@ -15,6 +15,7 @@ class Pais(models.Model):
 class Cliente(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
+    naciminto = models.DateField(null= True)
     pais_origen = models.ForeignKey(Pais, null=True, on_delete=models.SET_NULL)
 
     def __str__(self) -> str:
